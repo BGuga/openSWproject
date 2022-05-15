@@ -27,12 +27,10 @@ babel을 통해 내 최신js 코드를 호환성이 좋은 구 버전 js코드�
 
 / -> 홈 페이지
 
-/join -> 회원가입
-/login -> 로그인
+/join -> 회원가입   
+/login -> 로그인    
 
-/movies: 영화 보여주는 페이지
-/movies/:id 영화 상세정보
-
-
-/users/:id 사용자 상세정보
-/users/likemovie 사용자가 좋아하는 영화 목록
+/movies: 영화 보여주는 페이지    
+/movies/:id 영화 상세정보   
+/users/:id 사용자 상세정보   
+/users/likemovie 사용자가 좋아하는 영화 목록   
