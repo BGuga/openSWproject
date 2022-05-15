@@ -1,0 +1,4 @@
+{
+    "exec":"npx babel-node server.js"
+}
+
