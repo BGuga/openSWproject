@@ -1,5 +1,5 @@
 export const home = (req,res)=>{
-    return res.send("hello this is homepage!");
+    return res.render("home",{siteTitle: "movie!",pageTitle:"home Page!"});
 }
 
 export const join= (req,res) =>{

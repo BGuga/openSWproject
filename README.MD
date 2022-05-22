@@ -4,7 +4,7 @@
 
 영화 사이트 만들기
 
-사용 API: https://yts.torrentbay.to/api
+사용 API: https://yts.mx/
 
 사용 데이터베이스(예비) mongo DB
 
@@ -25,13 +25,25 @@ babel을 통해 내 최신js 코드를 호환성이 좋은 구 버전 js코드�
 
 ⚡라우팅⚡
 
-/ -> 홈 페이지
+- [✔] / -> 홈 페이지
 
-/join -> 회원가입   
-/login -> 로그인    
+- [✔] /join -> 회원가입   
+- [✔] /login -> 로그인    
 
-/movies: 영화 보여주는 페이지    
-/movies/:id 영화 상세정보   
+- [✔] /movies: 영화 보여주는 페이지    
+- [✔] /movies/:id 영화 상세정보   
+- [] /movies/:id 에 정규표현식 적용하기
      
-/users/:id 사용자 상세정보   
-/users/likemovie 사용자가 좋아하는 영화 목록   
+- [✔] /users/:id 사용자 상세정보 - 
+- [✔] /users/likemovie 사용자가 좋아하는 영화 목록   
+
+
+pug뷰 만들기
+
+
+컨트롤러만들기
+
+
+영화 디비 활용하기
+
+몽고 db 쓰기
