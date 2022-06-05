@@ -1,0 +1,12 @@
+extends layout.pug
+include mixins/trending.pug
+
+block content
+    div 
+        h1=pageTitle
+        img(src=`https://www.themoviedb.org/t/p/w600_and_h900_bestv2${info.poster_path}`)
+        div 
+            span=info.overview
+        br
+        span 
+            a(href=`https://www.themoviedb.org/movie/${info.id}`) The movie DB에서 영화정보 보기 &rarr;

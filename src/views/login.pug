@@ -1,0 +1,14 @@
+extends layout.pug
+
+block content 
+    if errorMessage
+        h3=errorMessage
+    h1=pageTitle
+    form(method="POST")
+        input(name="username" placeholder="your username plz" required type="text")
+        input(name="password" placeholder="your password" required type="password")
+        input(value="login now!" type="submit")
+    hr
+    span 
+        a(href="/join") you don't have account?  Join now! &rarr;
+        a(href="/users/github/start") Continue with Github &rarr;

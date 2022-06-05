@@ -4,4 +4,12 @@ header
             li
                 a(href="/") Home 
             li 
-                a(href="/movies") Movies 
+                a(href="/movies/discover/") Movies
+            if loggedIn
+                li 
+                    a(href="/logout") logout
+            else
+                li 
+                    a(href="/login") login 
+                li 
+                    a(href="/join") join

@@ -1,0 +1,7 @@
+extends layout.pug
+include  mixins/movies.pug
+
+block content 
+    div 
+        h1 영화 검색 결과
+        +movies(movies)

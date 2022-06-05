@@ -1,0 +1,43 @@
+extends layout.pug
+
+block content
+        form(method="POST")
+            select(name="year")
+                option(value="" selected) 년도선택
+                option(value="2017") 2017
+                option(value="2018") 2018
+                option(value="2019") 2019
+                option(value="2020") 2020
+                option(value="2021") 2021
+                option(value="2022") 2022
+            select(name="genre")
+                option(value="") 장르 선택
+                option(value="Action") 액션
+                option(value="Adventure") 어드벤쳐
+                option(value="Animation") 애니메이션
+                option(value="Comedy") 코미디
+                option(value="Crime") 범죄
+                option(value="Documentary") 다큐
+                option(value="Drama") 드라마
+                option(value="Family") 가족영화
+                option(value="Fantasy") 판타지
+                option(value="History") 역사
+                option(value="Horror") 호러
+                option(value="Music") 음악
+                option(value="Mystery") 미스터리
+                option(value="Romance") 로멘스
+                option(value="Science Fiction") 공상과학
+                option(value="TV Movie") Tv영화
+                option(value="Thriller") 스릴러
+                option(value="War") 전쟁
+                option(value="Western") 서부영화
+            select(name="rating")
+                option(value="") 평점 선택
+                option(value="5.0") 5.0
+                option(value="6.0") 6.0
+                option(value="7.0") 7.0
+                option(value="8.0") 8.0
+                option(value="9.0") 9.0
+            input(value="영화 검색!" type="submit")
+
+

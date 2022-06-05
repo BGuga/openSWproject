@@ -1,0 +1,6 @@
+mixin movies(movies)
+    div 
+        ul 
+            each movie in movies 
+                li
+                    a(href=`/movies/${movie.id}`)=movie.title

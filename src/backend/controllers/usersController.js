@@ -1,10 +1,4 @@
-export const userId =  (req,res) =>{
-    //getMovies();
-    res.send("user page");
+export const logout =(req,res)=>{
+    req.session.destroy();
+    return res.redirect("/")
 }
-
-export const userLikemovie =  (req,res) =>{
-    //getMovies();
-    res.send("user's favorite");
-}
-

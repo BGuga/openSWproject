@@ -1,9 +1,9 @@
 import express from "express";
-import { userId, userLikemovie } from "../controllers/usersController";
+import { finishGithubLogin, startGithubLogin } from "../controllers/globalController";
 
 const userRouter = express.Router();
 
-userRouter.get('/:id(\\d+)', userId);
-userRouter.get('/likemovie', userLikemovie);
+userRouter.get("/github/start",startGithubLogin)
+userRouter.get("/github/finish",finishGithubLogin)
 
 export default userRouter
