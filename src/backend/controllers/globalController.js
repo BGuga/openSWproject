@@ -57,9 +57,7 @@ export const postLogin = async (req,res) =>
 {
     const PAGETITLE = "Login"
     const {username,password} = req.body;
-    console.log(username,password)
     const user = await User.findOne({username});
-    console.log(user)
     if(!user){
         return res.status(400).render("login",{pageTitle:PAGETITLE,error:"An account with that username is not found"})
     }
@@ -84,7 +82,6 @@ export const startGithubLogin = (req,res) =>
     }
     const params = new URLSearchParams(config).toString();
     const finalURL = `${baseURL}?${params}`
-    console.log(finalURL);
     return res.redirect(finalURL); 
 }
 
@@ -99,7 +96,6 @@ export const finishGithubLogin = async (req,res) =>
     const params = new URLSearchParams(config).toString();
     const baseURL = `https://github.com/login/oauth/access_token`;
     const finalURL = `${baseURL}?${params}`;
-    console.log(req.query);
     const data = await fetch(finalURL,{
         method:"POST",
         headers:{

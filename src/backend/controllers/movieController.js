@@ -1,17 +1,5 @@
 import fetch from "node-fetch"
 
-const getMovies = async ()=>{
-    const BASEURL = `https://yts.mx/api/v2/list_movies.json`;
-    const movies = await fetch(BASEURL,{
-        
-    });
-    console.log(movies);
-}
-
-export const showMovies =  (req,res) =>{
-    //getMovies();
-    res.send("movie home");
-}
 
 export const movieInformation = async (req,res)=>{
     const {id}= req.params; 
@@ -27,7 +15,6 @@ export  const getDiscover = (req, res)=>{
 
 export const postDiscover = async (req, res)=>{
     const {year, genre,rating} =  req.body
-    console.log(year,genre,rating)
     const KEY= process.env.API_KEY
     const genreData = await fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${KEY}&language=en-US`)
     const genres = await genreData.json()
@@ -35,7 +22,7 @@ export const postDiscover = async (req, res)=>{
     const genreId = target[0].id
 
     const moviesData = await fetch(`
-    https://api.themoviedb.org/3/discover/movie?api_key=${KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&year=${year}&vote_average.gte=${rating}&with_genres=28%2C12&with_watch_monetization_types=flatrate`,
+    https://api.themoviedb.org/3/discover/movie?api_key=${KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&year=${year}&vote_average.gte=${rating}&with_genres=${genreId}&with_watch_monetization_types=flatrate`,
     {
         method:"GET"
     })

@@ -3,7 +3,6 @@ import "./db"
 import "../models/User"
 import app from "./server";
 
-console.log("hihihihihih")
 
 const PORT = 3000
 

@@ -4,9 +4,33 @@
 
 영화 사이트 만들기
 
-사용 API: https://yts.mx/
+사용 API: https://www.themoviedb.org/
 
-사용 데이터베이스(예비) mongo DB
+사용 데이터베이스 mongo DB
+
+📢사용 API 기능📢
+
+1. Trending
+
+한 주 또는 한달 동안의 유행 영화 정보를 받아올 수 있다
+
+2. Discover
+
+설정한 변수들에 해당하는 영화의 목록을 가져다준다
+이번 프로젝트에서는 평점, 장르, 년도를 기반으로 결과값을 반환받음
+
+3. Genre
+
+각 장르별 설정된 ID값을 얻을 수 있다
+
+4. POSTER
+
+영화의 ID값을 통해 영화 포스터 이미지를 얻을 수 있다
+
+5. Detail information
+
+MovieDB내에 있는 영화의 자세한 정보가 담긴 페이지
+
 
 📢 devDependencies 📢
 
@@ -28,22 +52,13 @@ babel을 통해 내 최신js 코드를 호환성이 좋은 구 버전 js코드�
 - [✔] / -> 홈 페이지
 
 - [✔] /join -> 회원가입   
-- [✔] /login -> 로그인    
+- [✔] /login -> 로그인 
+- [✔] /logout -> 로그아웃
 
-- [✔] /movies: 영화 보여주는 페이지    
+ 
 - [✔] /movies/:id 영화 상세정보   
-- [] /movies/:id 에 정규표현식 적용하기
+- [✔] /movies/:id 에 정규표현식 적용하기
+- [✔] /movies/discover 년도, 장르, 평점를 기반으로한 영화 검색
      
-- [✔] /users/:id 사용자 상세정보 - 
-- [✔] /users/likemovie 사용자가 좋아하는 영화 목록   
-
-
-pug뷰 만들기
-
-
-컨트롤러만들기
-
-
-영화 디비 활용하기
-
-몽고 db 쓰기
+- [✔] /users/github/start Git hub OAuth를 기반으로한 로그인 구현
+- [✔] /users/github/finish OAuth를 기반으로 전달받은 데이터를 처리하기 위한 Callback funcion   

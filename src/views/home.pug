@@ -1,8 +1,8 @@
 extends layout.pug
-include mixins/trending.pug
+include mixins/movies.pug
 
 block content
     div 
         h1=pageTitle
         small 이번주에 인기있는 영화들
-        +trending(movies)
+        +movies(movies)
