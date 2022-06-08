@@ -89,13 +89,14 @@ export const finishGithubLogin = async (req,res) =>
 {
 
     const config = {
-        client_id: process.env.O_AUTH_CLIENT_ID,
+        client_id: process.env.O_Auth_client_id,
         client_secret : process.env.O_Auth_scret,
         code: req.query.code
     }
     const params = new URLSearchParams(config).toString();
     const baseURL = `https://github.com/login/oauth/access_token`;
     const finalURL = `${baseURL}?${params}`;
+    console.log(finalURL)
     const data = await fetch(finalURL,{
         method:"POST",
         headers:{
@@ -107,12 +108,13 @@ export const finishGithubLogin = async (req,res) =>
     {
         const {access_token} = token;
         const apiUrl = "https://api.github.com"
-        const getUserData = await fetch(`${apiUrl}/user`,{
-            method:"GET",
-            headers:{
-                Authorization: `token ${access_token}`
-            }
-        });
+        const userRequest = await (
+            await fetch(`${apiUrl}/user`, {
+              headers: {
+                Authorization: `token ${access_token}`,
+              },
+            })
+          ).json();
         const emailData = await (
             await fetch(`${apiUrl}/user/emails`,{
                 method:"GET",
@@ -129,7 +131,7 @@ export const finishGithubLogin = async (req,res) =>
         if(!user){
             user = await User.create({
                 email:emailObj.email,
-                username:userData.login,
+                username:userRequest.login,
                 password:"",
                 isO_Auth: true,
             });
