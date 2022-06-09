@@ -96,7 +96,6 @@ export const finishGithubLogin = async (req,res) =>
     const params = new URLSearchParams(config).toString();
     const baseURL = `https://github.com/login/oauth/access_token`;
     const finalURL = `${baseURL}?${params}`;
-    console.log(finalURL)
     const data = await fetch(finalURL,{
         method:"POST",
         headers:{
